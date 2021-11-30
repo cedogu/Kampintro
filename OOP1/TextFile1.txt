@@ -1,0 +1,4 @@
+﻿ilk önce product sınıfına tanımlamalarımızı yazdık
+program.cs'de ürünümüze proplarını tanıttık (2 türlü) (Product product1= new Product) 
+product manager'a Add methodu ekledik, Add methoduna parametreyi Product'tan sağlamamız lazım bunun için program.cs'de ProductManager = new ProductManager'i tanımladık.
+product manager'in Add methoduna product. yaptığımızda product'a ait tüm ürünleri görebiliriz. 
