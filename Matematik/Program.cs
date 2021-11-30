@@ -11,7 +11,17 @@ namespace Matematik
 
             dortIslem.Topla(10, 20);
 
+            Console.WriteLine();
+
+            DortIslem dortIslem1 = new DortIslem();
+            dortIslem.Carpma(2, 5);
+            dortIslem.Carpma(4, 7);
+
+
+
+
             Console.Read();
+
         }
     }
 }
