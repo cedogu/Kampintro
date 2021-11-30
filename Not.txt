@@ -1,0 +1,3 @@
+1. ürüne propertyler atadýk ve program.cs'de ondan instance aldýk, ürünlere deðer atadýk. Ürünleri dizi içine aldýk ve foreach icinde okutturduk.
+2. sepetmanager classýna Ekle diye metod atadýk ve ona Urun'den gelecek parametreleri atadýk
+3. program.cs'de sepetmanager instance alarak ona gelecek urun parametrelerini tanýttýk.
