@@ -18,12 +18,53 @@ namespace GenericsIntro
             Console.WriteLine(isimler.Length);
 
 
-         
+
 
             foreach (var isim in isimler.Items)
             {
                 Console.WriteLine(isim);
             }
+
+
+            Console.WriteLine("----------");
+
+
+            //Homework
+            Console.WriteLine("----Homework----");
+            List<string> people = new List<string>();
+            people.Add("Madolyn");
+            people.Add("Chris");
+            people.Add("John");
+            people.Add("Shyla");
+            Console.WriteLine("number of this array is :" + people.Count);
+            foreach (var name in people)
+            {
+                Console.WriteLine("My people in this array : " + name);
+            }
+
+            Console.WriteLine("------------------------");
+
+            List<string> people2 = new List<string>
+            {
+                "Solomon", "David", "Jan","Ivana","Eva"
+            };
+
+            Console.WriteLine("number of people in this array is: " + people2.Count);
+
+            foreach (var name2 in people2)
+            {
+                Console.WriteLine("my people in this array: "+ name2);
+            }
+            Console.ReadLine();
+
+            
+
+
+
+
+
+
+
 
             //first trial
             //List<string> liste = new List<string>();
