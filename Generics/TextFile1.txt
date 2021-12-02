@@ -1,0 +1,22 @@
+﻿1- ilk önce sehirler adlı string list'i olusturduk
+2- Mylist adında class olusturduk, MyList class'ını ilk tanıttıgımız List'e benzetmek için.
+3- MyList icine Add diye bir method tanımladık.Add methoduna string verdigimiz icin Mylist sehirler2 kısmına da mecbur string bir değer girmeliyiz (asagıda degisecek)
+4- class mylist'e gelip <T> yapıyoruz T= type böylelikle generic bir class oluyor.
+5- class mylist'i T yaptıgımız için Add methodunun parametresi de otomatik olarak (T item) oluyor. Böylelikle yukarıda MyList<> sehirler kısmında herhangi bir değeri istediğimiz gibi verebiliriz.
+6- Kısaca Add methodundaki T gönderdigimiz tip kullanırken, hangisini verirsek ona dönüşüyor.
+7- Listeler bir koleksiyondur ve arka planda Array olarak çalışır.
+8- MyList altında T tipinde bir array oluşturduk cünkü hangi tip gönderilirse o tipte bir array olusturulmalıdır T[] _array; şeklinde
+9- normal arraylerde new yaparak eleman sayısını vermeliyiz ve ctor içine _array= new T[0]; yaparak 0 elemanlı bir array olusturduk.
+10-public int Count { get{return _array.length;}} yaparak array'ın değerini döndürürüz.yani mylist'in count'unu cagırınca aslında _array'ın eleman sayısını verecek.
+11-sonucu yazdırınca ikisi de 0 - 0 oluyor.
+12-List'imize sehirler.Add deyince bir ekleme oluyor ve eleman sayısını +1 olarak gösterir ama MyList'te sonuc 0 olur. cünkü Mylist'in add kısmında bir işlem yapmadık cünkü 0 elemanlı bir array.
+13- her arttırmada bir arttırmak için new yapmamız gerek yani; _array= new T[_array.length+1]; şekline yaparak +1 eklemesini saglıyoruz.
+14- ama +1 yaptıgımızda tüm data gider.3 elemanlı bir array'a +1 add yapınca yeni referans almasından ötürü 4 elemanlı olur ama ilk üc eleman ucar gider.bizim array onları tutmaz.
+15- buna da engel olmak için ilk önce yedek bir array olusturarak o önceki üc değerin de kaybolmasını engelleriz.
+16- T[] _tempArray olustururuz ve add methodu içine gelerek  _tempArray= _array yaparak bunları eşleştiririz. bu demek olur ki, tempArray, array'in referanslarını tutuyor. böylelikle de değer kaybı yaşanmıyor
+17- değerleri birbirine bağlamak için for döngüsünü kullanırız. i<_tempArray.length; i++ yaparız. böyle yapmamızın sebebi _array'in değerlerini _tempArray'a aktarmak. cünkü o for _tempArray kadar değer tutacak
+18-_array[i] = _tempArray[i] ile eşleşme yapıyoruz. 0-0 1-1 2-2 şeklinde eslesir. 4. eleman artık boas cıkar
+19- _array[_array.length-1] şeklinde yaparak fazladan değer tutturmaz ve eleman sayılarını eslestirir.dolayısıyla ne eklersek onu da Add methoduna dahil ediyoruz.
+20-Böylelikle istersek 2190389103809 değer ekleyelim MyList bizim eklediğimiz kadar değeri gösterir.
+
+
