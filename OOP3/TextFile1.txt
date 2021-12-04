@@ -1,0 +1,19 @@
+﻿1- İlk olarak Kredi Manager olusturduk ve ona hesapla methodunu tanıttık.
+2- Kredi türlerinin classlarını olusturduk ve onların hangi class'ı implemente edeceğini tanıttık
+3- KrediManager'i interface yaptık ve tüm classlarda onu implement interface'e tıklayarak interface'yi kullanmasını sağladık
+4- BasvuruManager adlı class acarak IKrediManager krediManager diye ana interface'i parametre olarak yolladık ve ona da parametrenin hesapla methodunu yolladık
+5-Program.cs'de tüm classların instance halini alarak newleyerek heap belleğine yolladık.Aslında bunu şu yöntemle de yapabiliriz
+6-Hali hazırda BasvuruManager dısındaki tüm classlar KrediManager'i inherit aldığı için 
+7-IKrediManager ihtiyackrediManager,IKrediManager konutkrediManager,IKrediManager ihtiyacKrediManager seklinde de olur
+8-Sebebi ise inherit edilen class hepsinin referansını tutmaktadır.
+9-BasvuruManager'in instance'sini aldık ve ona herhangi bir kredi türünü parametre olarak yolladık
+10- Hangi kredi türünü yollarsak yollayalım onun hesapla methodunu zaten kendiliğinden calıstırır.
+11- BasvuruManager içine KrediOnBilgilendirmesiYap adlı method olusturduk ona List<> içinde IKrediManager yolladık çünkü kredi bir tane de olur 10 da olur 100 de. List hepsini tutabiliyor
+12-Program.cs'de Liste'nin instance'sini aldık 
+13-List<IKrediManager> krediler = new List<IKrediManager>() { };  basvuruManager.KrediOnBilgilendirmesiYap(krediler);
+14-KrediOnBilgilendirmesiYap içinde Liste oldugu icin tüm kredileri göstermesi için foreach yapıyoruz. 
+15- Log sistemi eklemek için OOP3 üstüne Interface ekledik
+16-Interface oldugu icin sadece imza ekleriz.
+17-Database'e ekleme yapacaıgımız için DatabaseLoggerService class'ını açtık.
+18- Interface içinde imza metodları olur.İçi dolu olamaz.
+19-BasvuruManager'a gelip ILoggerService'de implemente ettik ve hangi log istenilirse onu vermesi için kodumuzu yazıyoruz.
